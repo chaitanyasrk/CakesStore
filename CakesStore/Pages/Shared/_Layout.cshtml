@@ -1,50 +1,55 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CakesStore</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <title>Chaitanya's Cake Design</title>
+    <link rel="stylesheet" href="~/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">CakesStore</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+
+    <header class="container site-header">
+        <div class="row">
+            <h1 class="main-logo"><a href="/">Chaitanya's Cake Design</a></h1>
+        </div>
+        <div class="row">
+            <nav class="navbar">
+                <ul class="nav nav-pills">
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/Blog">Blog</a></li>
+                    <li><a class="active" href="/">Recipes</a></li>
+                    <li><a href="/Portfolio">Portfolio</a></li>
+                    <li><a href="/Contact">Contact</a></li>
+                </ul>
+                <ul class="nav nav-pills">
+                    <li>
+                        <a href="/Account/Login">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <h2 class="title">My Favorite Recipes</h2>
+        </div>
     </header>
+
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+        <div class="row recipes">
+
+            <div class="recipe col-md-4">
+                <img class="img img-thumbnail" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1580&q=80" />
+                <h3><a href="/Recipe">Birthday Cake for Fido</a></h3>
+                <p>Treat your puppy to a delicious birthday treat!</p>
+                @RenderBody();
+            </div>
+
+        </div>
+
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - CakesStore - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer>
+        <div class="text-center">
+            <span class="text-muted">Last Rendered:  </span>
         </div>
     </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @RenderSection("Scripts", required: false)
 </body>
 </html>
